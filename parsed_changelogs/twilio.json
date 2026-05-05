@@ -1,0 +1,15 @@
+{
+  "source_id": "twilio",
+  "entries": [
+    {
+      "entry_id": "twilio-001",
+      "source_id": "twilio",
+      "source": "Twilio Changelog",
+      "version_or_date": "2026-05-31",
+      "published_at": "2026-05-31",
+      "change_title": "Transit CallerID Sunset: Migrate to Verified CallerID or Immutable Call Forwarding Before May 31, 2026",
+      "change_body": "Starting May 31, 2026, Twilio will begin sunsetting the Transit CallerID feature. Customers currently using Transit CallerID to present a different phone number than the one they're calling from will need to migrate to an alternative before this date. Learn more",
+      "change_type_raw": null
+    }
+  ]
+}

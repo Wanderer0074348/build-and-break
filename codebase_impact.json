@@ -1,0 +1,26 @@
+{
+  "affected_functions": [
+    {
+      "function_name": "create_payment_intent",
+      "affected": false,
+      "breaking_detail": "This function uses stripe.PaymentIntent.create() with standard keyword arguments (params only, no mixed options), no callbacks, no per-request API key, and no decimal_string fields. The listed high-risk changes do not concretely affect this function.",
+      "suggested_fix_summary": "No changes required.",
+      "related_entry_ids": []
+    },
+    {
+      "function_name": "list_recent_charges",
+      "affected": false,
+      "breaking_detail": "This function uses stripe.Charge.list() with standard params only, no callbacks, no per-request API key, and no decimal_string fields. The listed high-risk changes do not concretely affect this function.",
+      "suggested_fix_summary": "No changes required.",
+      "related_entry_ids": []
+    },
+    {
+      "function_name": "create_customer",
+      "affected": false,
+      "breaking_detail": "This function uses stripe.Customer.create() with standard keyword arguments, no callbacks, no per-request API key, and no decimal_string fields. The listed high-risk changes do not concretely affect this function.",
+      "suggested_fix_summary": "No changes required.",
+      "related_entry_ids": []
+    }
+  ],
+  "explanation": "The codebase is written in Python and uses the Python Stripe SDK (stripe-python), whereas all listed high-risk changes (entry_ids stripe_node-0066 through stripe_node-0093) exclusively concern the stripe-node (Node.js/JavaScript) SDK. Breaking changes such as removal of CJS .default exports, the ES6 class instantiation requirement, removal of callback support, removal of plain API key as a function arg, and decimal_string type changes from string to Stripe.Decimal are all Node.js SDK-specific and do not apply to the Python SDK. Therefore, none of the functions in this Python codebase are concretely affected by any of the listed high-risk changes."
+}

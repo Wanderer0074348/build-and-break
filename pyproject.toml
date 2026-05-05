@@ -1,0 +1,13 @@
+[project]
+name = "build-and-break"
+version = "0.1.0"
+description = "Changelog Impact Pipeline"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "anthropic",
+    "requests",
+    "beautifulsoup4",
+    "python-dateutil",
+    "python-dotenv",
+]

@@ -1,0 +1,2432 @@
+[
+  {
+    "entry_id": "stripe_node-0001",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Generic 'update generated code' entry with no specific details; treated as a routine code generation enhancement. No breaking signals present."
+  },
+  {
+    "entry_id": "stripe_node-0002",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds new capability fields to Account and related params, expanding the data model without removing or changing existing fields."
+  },
+  {
+    "entry_id": "stripe_node-0003",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds new component fields for balance reporting and payout reconciliation to AccountSession, expanding the data model without breaking existing usage."
+  },
+  {
+    "entry_id": "stripe_node-0004",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds new enum values to BalanceTransaction.type; the warning (\u26a0\ufe0f) indicates exhaustive switch/case handlers may break, hence low risk."
+  },
+  {
+    "entry_id": "stripe_node-0005",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds sunbit payment method support across numerous payment-related objects and params without removing or altering existing fields."
+  },
+  {
+    "entry_id": "stripe_node-0006",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds new enum values for crypto token currency; the \u26a0\ufe0f flag indicates exhaustive enum consumers could be affected."
+  },
+  {
+    "entry_id": "stripe_node-0007",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds location and reader fields to Klarna payment method details on charge and payment records, expanding the data model additively."
+  },
+  {
+    "entry_id": "stripe_node-0008",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds mandate field to PIX payment method details additively across charge and payment record objects."
+  },
+  {
+    "entry_id": "stripe_node-0009",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds managed_payments support to Checkout, PaymentIntent, PaymentLink, SetupIntent, and Subscription objects, expanding the data model."
+  },
+  {
+    "entry_id": "stripe_node-0010",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds 'sunbit' as a new enum value to excluded_payment_method_types across checkout and payment intent params."
+  },
+  {
+    "entry_id": "stripe_node-0011",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds mandate_options to PIX payment method options across Checkout and PaymentIntent objects and params."
+  },
+  {
+    "entry_id": "stripe_node-0012",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Widens the type of pix setup_future_usage from a literal to an enum, which could affect strict type checks in consumer code."
+  },
+  {
+    "entry_id": "stripe_node-0013",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds 'sunbit' as an accepted enum value for payment_method_types in Checkout session creation params."
+  },
+  {
+    "entry_id": "stripe_node-0014",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds new tax ID type enum values across multiple response objects; the \u26a0\ufe0f flag indicates exhaustive enum handling could be affected."
+  },
+  {
+    "entry_id": "stripe_node-0015",
+    "change_type": "breaking",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Marked with \u26a0\ufe0f, this changes the response type of setup_future_usage from a literal to an enum on Checkout.Session and PaymentIntent, which could break strict type comparisons in consumer code."
+  },
+  {
+    "entry_id": "stripe_node-0016",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds 'sunbit' as a new payment_method_data type enum value across confirmation and intent params."
+  },
+  {
+    "entry_id": "stripe_node-0017",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds 'sunbit' to response-side PaymentMethod.type enum; the \u26a0\ufe0f flag indicates exhaustive switch consumers may be affected."
+  },
+  {
+    "entry_id": "stripe_node-0018",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds new tax ID type enum values to request params for customer and invoice tax ID creation."
+  },
+  {
+    "entry_id": "stripe_node-0019",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds 'sunbit' to payment method type enums used in listing and creating payment methods."
+  },
+  {
+    "entry_id": "stripe_node-0020",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds PIX payment method options to Invoice, SetupIntent, Mandate, and Subscription objects and their params."
+  },
+  {
+    "entry_id": "stripe_node-0021",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds UPI payment method options to Invoice and Subscription objects and their params."
+  },
+  {
+    "entry_id": "stripe_node-0022",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds 'pix' and 'upi' to payment method type enums in Invoice and Subscription request params."
+  },
+  {
+    "entry_id": "stripe_node-0023",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds 'pix' and 'upi' to response-side payment method type enums; the \u26a0\ufe0f flag signals possible impact on exhaustive enum consumers."
+  },
+  {
+    "entry_id": "stripe_node-0024",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds card_presence field to Issuing.Authorization response object, extending the data model additively."
+  },
+  {
+    "entry_id": "stripe_node-0025",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds allowed/blocked card presence controls to Issuing Card and Cardholder spending controls."
+  },
+  {
+    "entry_id": "stripe_node-0026",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds 'fulfillment_error' to the cancellation_reason enum on Issuing.Card; the \u26a0\ufe0f flag indicates exhaustive enum consumers may need updating."
+  },
+  {
+    "entry_id": "stripe_node-0027",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds 'fulfillment_error' to the replacement_reason enum on Issuing.Card; the \u26a0\ufe0f flag indicates exhaustive enum consumers may need updating."
+  },
+  {
+    "entry_id": "stripe_node-0028",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds amount and currency fields to Mandate.multi_use, extending the mandate data model additively."
+  },
+  {
+    "entry_id": "stripe_node-0029",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds amount_to_confirm parameter to PaymentIntentConfirmParams, giving callers an additional optional field."
+  },
+  {
+    "entry_id": "stripe_node-0030",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds 'sunbit' to excluded_payment_method_types response enum on PaymentIntent and SetupIntent; the \u26a0\ufe0f flag indicates potential impact on exhaustive enum handlers."
+  },
+  {
+    "entry_id": "stripe_node-0031",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds klarna_display_qr_code to PaymentIntent.next_action, extending possible next action types."
+  },
+  {
+    "entry_id": "stripe_node-0032",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds 'sunbit' to payment_method_types enums in PaymentLink create and update params."
+  },
+  {
+    "entry_id": "stripe_node-0033",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds 'sunbit' to the response-side PaymentLink.payment_method_types enum; the \u26a0\ufe0f flag signals exhaustive consumers may be affected."
+  },
+  {
+    "entry_id": "stripe_node-0034",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds new risk level enum values to Radar.PaymentEvaluation; the \u26a0\ufe0f flag indicates exhaustive enum handling may need updating."
+  },
+  {
+    "entry_id": "stripe_node-0035",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds 'account' as a new item_type enum value to Radar.ValueListCreateParams, expanding what can be created."
+  },
+  {
+    "entry_id": "stripe_node-0036",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds 'account' to the response-side Radar.ValueList.item_type enum; the \u26a0\ufe0f flag signals exhaustive consumers may need updating."
+  },
+  {
+    "entry_id": "stripe_node-0037",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds moto field to SetupAttempt.payment_method_details.card, extending the card data model additively."
+  },
+  {
+    "entry_id": "stripe_node-0038",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds pix_display_qr_code to SetupIntent.next_action, extending possible next action types for setup intents."
+  },
+  {
+    "entry_id": "stripe_node-0039",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds a new API version value to WebhookEndpointCreateParams.api_version enum, reflecting a new Stripe API release."
+  },
+  {
+    "entry_id": "stripe_node-0040",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds new error codes to StripeError and related error fields, providing more granular error classification."
+  },
+  {
+    "entry_id": "stripe_node-0041",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes stack trace preservation for async operations, improving debugging without changing any API or data model behavior."
+  },
+  {
+    "entry_id": "stripe_node-0042",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds a new async variant of parseEventNotification to match the existing sync function, improving API symmetry."
+  },
+  {
+    "entry_id": "stripe_node-0043",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds emitEventBodies configuration option as a new opt-in feature for including bodies in request/response events."
+  },
+  {
+    "entry_id": "stripe_node-0044",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Documents the new emitEventBodies config option, which is purely additive and opt-in."
+  },
+  {
+    "entry_id": "stripe_node-0045",
+    "change_type": "breaking",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Changes the httpClient config type from a concrete class to an interface, which could break existing code that passes HttpClient instances typed against the class."
+  },
+  {
+    "entry_id": "stripe_node-0046",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Makes tolerance, receivedAt, and timestamp optional in webhook validation, relaxing previously required parameters."
+  },
+  {
+    "entry_id": "stripe_node-0047",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes a named export issue for the Bun runtime, restoring correct import behavior without any behavioral changes."
+  },
+  {
+    "entry_id": "stripe_node-0048",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds constructor-based initialization support for CJS TypeScript imports, fixing a compatibility issue without breaking existing usage."
+  },
+  {
+    "entry_id": "stripe_node-0049",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Restores the ability to use new Stripe() in CJS TypeScript projects, fixing a regression introduced in v22.0.0."
+  },
+  {
+    "entry_id": "stripe_node-0050",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes missing nested service param exports in the Stripe namespace, restoring correct TypeScript type availability."
+  },
+  {
+    "entry_id": "stripe_node-0051",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "References resolved GitHub issues related to export and namespace fixes, confirming bugfix nature."
+  },
+  {
+    "entry_id": "stripe_node-0052",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds compile-time type safety to the Stripe constructor config with no runtime changes, fixing type-level deficiencies."
+  },
+  {
+    "entry_id": "stripe_node-0053",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes compile-time type checks with no runtime impact, purely a type-system correction."
+  },
+  {
+    "entry_id": "stripe_node-0054",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Restores compile-time type safety for Stripe constructor config by using the correct StripeConfig type."
+  },
+  {
+    "entry_id": "stripe_node-0055",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": true,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds the missing authenticator property to StripeConfig, fixing an incomplete type definition that affects auth configuration."
+  },
+  {
+    "entry_id": "stripe_node-0056",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes Stripe.API_VERSION to preserve its literal type, correcting a type-level regression with no runtime impact."
+  },
+  {
+    "entry_id": "stripe_node-0057",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes StripeConfig.stripeContext to accept StripeContext objects in addition to strings, correcting an overly restrictive type."
+  },
+  {
+    "entry_id": "stripe_node-0058",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Improves developer experience by throwing a more descriptive error when rawRequest is called with absolute URLs."
+  },
+  {
+    "entry_id": "stripe_node-0059",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds string[] to WebhookHeader type to enable compatibility with Express framework webhook signature handling."
+  },
+  {
+    "entry_id": "stripe_node-0060",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Widens the signature param type to include string[] for Express compatibility in construct_event, fixing a type incompatibility."
+  },
+  {
+    "entry_id": "stripe_node-0061",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "References the PR for improved TypeScript support, summarizing the major v22.0.0 TypeScript overhaul."
+  },
+  {
+    "entry_id": "stripe_node-0062",
+    "change_type": "enhancement",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Moves types inline with implementation, which may affect consumers importing from the old types folder path and could break existing import paths."
+  },
+  {
+    "entry_id": "stripe_node-0063",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Removing the top-level 'stripe' ambient module is a breaking TypeScript change that will affect consumers relying on that ambient declaration."
+  },
+  {
+    "entry_id": "stripe_node-0064",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Removes Stripe.StripeContext as an exported type, requiring consumers to migrate to Stripe.StripeContextType."
+  },
+  {
+    "entry_id": "stripe_node-0065",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Removes Stripe.errors.StripeError as a usable type, requiring consumers to use typeof or the new ErrorType alias instead."
+  },
+  {
+    "entry_id": "stripe_node-0066",
+    "change_type": "breaking",
+    "breaking_risk": "high",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Removing .default and .Stripe from the CJS entry point will break CommonJS consumers that rely on those exports, a high-impact runtime breaking change."
+  },
+  {
+    "entry_id": "stripe_node-0067",
+    "change_type": "breaking",
+    "breaking_risk": "high",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Requiring new Stripe() instead of calling Stripe() as a function is a fundamental API usage change that will break all existing call-style instantiation."
+  },
+  {
+    "entry_id": "stripe_node-0068",
+    "change_type": "breaking",
+    "breaking_risk": "high",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Removing stripeMethod and callback support is a significant breaking change that affects all consumers using the callback pattern or extending via stripeMethod."
+  },
+  {
+    "entry_id": "stripe_node-0069",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Refactoring method argument parsing changes how arguments are handled, potentially breaking consumers relying on the previous lenient parsing behavior."
+  },
+  {
+    "entry_id": "stripe_node-0070",
+    "change_type": "breaking",
+    "breaking_risk": "high",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Removing callback support from all API methods is a critical breaking change requiring all callback-based consumers to migrate to async/await."
+  },
+  {
+    "entry_id": "stripe_node-0071",
+    "change_type": "breaking",
+    "breaking_risk": "high",
+    "affects_auth": true,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Removing support for passing a plain API key as a function argument breaks all callers relying on per-request key passing in that style."
+  },
+  {
+    "entry_id": "stripe_node-0072",
+    "change_type": "breaking",
+    "breaking_risk": "high",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Strictly separating params and options objects breaks any code that previously mixed keys from both in a single argument object."
+  },
+  {
+    "entry_id": "stripe_node-0073",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Removing internal methods from StripeResource breaks any third-party code or extensions that relied on these methods even though they were mostly internal."
+  },
+  {
+    "entry_id": "stripe_node-0074",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Removing the per-request host override forces consumers to configure the host at the client level, breaking any code that set host per request."
+  },
+  {
+    "entry_id": "stripe_node-0075",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Duplicate reference to the TypeScript improvement PR; treated as an enhancement summary entry."
+  },
+  {
+    "entry_id": "stripe_node-0076",
+    "change_type": "breaking",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Renaming V2/Amount.ts to V2/V2Amount.ts is a breaking file-level change for any consumers directly importing from that internal path."
+  },
+  {
+    "entry_id": "stripe_node-0077",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Updates test and type for constructEvent.tolerance, fixing a type definition with no runtime breaking impact."
+  },
+  {
+    "entry_id": "stripe_node-0078",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes the Stripe.Decimal export in both CJS and ESM environments, resolving a regression from the v21.0.0 release."
+  },
+  {
+    "entry_id": "stripe_node-0079",
+    "change_type": "breaking",
+    "breaking_risk": "high",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Explicitly marked as a breaking change, introducing the Stripe.Decimal type for decimal_string fields that previously used string, requiring code changes across many financial fields."
+  },
+  {
+    "entry_id": "stripe_node-0080",
+    "change_type": "breaking",
+    "breaking_risk": "high",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Changes the type of all decimal_string fields from string to Stripe.Decimal in both requests and responses, requiring widespread code changes."
+  },
+  {
+    "entry_id": "stripe_node-0081",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "The fx_rate field on Checkout.Session changes from string to Stripe.Decimal, breaking any code reading it as a string."
+  },
+  {
+    "entry_id": "stripe_node-0082",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "metric_tons and metric_tons_available change from string to Stripe.Decimal, breaking existing string-based consumers."
+  },
+  {
+    "entry_id": "stripe_node-0083",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "unit_amount_decimal on CreditNoteLineItem changes from string to Stripe.Decimal, breaking string-based consumers."
+  },
+  {
+    "entry_id": "stripe_node-0084",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "quantity_decimal and unit_amount_decimal on InvoiceItem change from string to Stripe.Decimal, breaking string-based consumers."
+  },
+  {
+    "entry_id": "stripe_node-0085",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "quantity_decimal and unit_amount_decimal on InvoiceLineItem change from string to Stripe.Decimal, breaking string-based consumers."
+  },
+  {
+    "entry_id": "stripe_node-0086",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Multiple decimal fields on Issuing.Authorization and Issuing.Transaction change from string to Stripe.Decimal."
+  },
+  {
+    "entry_id": "stripe_node-0087",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "amount_decimal, flat_amount_decimal, and unit_amount_decimal on Plan change from string to Stripe.Decimal."
+  },
+  {
+    "entry_id": "stripe_node-0088",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "unit_amount_decimal and flat_amount_decimal on Price (including currency_options and tiers) change from string to Stripe.Decimal."
+  },
+  {
+    "entry_id": "stripe_node-0089",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "percent_ownership on V2 Account and AccountPerson changes from string to Stripe.Decimal."
+  },
+  {
+    "entry_id": "stripe_node-0090",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Request param decimal fields across Invoice, Product, Quote, Subscription, etc. change from string to Stripe.Decimal."
+  },
+  {
+    "entry_id": "stripe_node-0091",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Explicitly marked as a breaking change; now throws an error when the wrong webhook parsing method is used, changing previously silent behavior."
+  },
+  {
+    "entry_id": "stripe_node-0092",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": true,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Explicitly marked as a breaking change; adds new OAuth Error classes that change how OAuth errors are represented and may break existing error handling code."
+  },
+  {
+    "entry_id": "stripe_node-0093",
+    "change_type": "breaking",
+    "breaking_risk": "high",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Dropping Node 16 support is a critical breaking change for any consumers still running on Node 16."
+  },
+  {
+    "entry_id": "stripe_node-0094",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds a manual amount type to support additional amount handling patterns in the SDK."
+  },
+  {
+    "entry_id": "stripe_node-0095",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds runtime support for V2 int64 string-encoded fields, improving data handling for large integer values."
+  },
+  {
+    "entry_id": "stripe_node-0096",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "References generated code changes from multiple PRs; treated as a general enhancement entry."
+  },
+  {
+    "entry_id": "stripe_node-0097",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds upi_payments capability to Account and related params, expanding supported payment capabilities."
+  },
+  {
+    "entry_id": "stripe_node-0098",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds UPI payment method support across a wide range of payment-related objects and params."
+  },
+  {
+    "entry_id": "stripe_node-0099",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds 'tempo' as a new crypto network enum value across payment detail objects."
+  },
+  {
+    "entry_id": "stripe_node-0100",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds integration_identifier to Checkout.Session and its create params, extending the session data model."
+  },
+  {
+    "entry_id": "stripe_node-0101",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds 'upi' to excluded_payment_method_types enums across checkout and intent params."
+  },
+  {
+    "entry_id": "stripe_node-0102",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds crypto payment method options to Checkout.SessionCreateParams."
+  },
+  {
+    "entry_id": "stripe_node-0103",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds 'upi' to the payment_method_types enum for Checkout session creation."
+  },
+  {
+    "entry_id": "stripe_node-0104",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds pending_invoice_item_interval to Checkout session subscription data params."
+  },
+  {
+    "entry_id": "stripe_node-0105",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds new UI mode values to Checkout.Session, expanding the supported session display modes."
+  },
+  {
+    "entry_id": "stripe_node-0106",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds 'marine_carbon_removal' as a new removal pathway value for Climate suppliers."
+  },
+  {
+    "entry_id": "stripe_node-0107",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds 'upi' as a new payment_method_data type enum value across confirmation and intent params."
+  },
+  {
+    "entry_id": "stripe_node-0108",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds 'upi' to response-side PaymentMethod.type and ConfirmationToken preview type enums."
+  },
+  {
+    "entry_id": "stripe_node-0109",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds metadata support to CreditNote line items in both request params and response objects."
+  },
+  {
+    "entry_id": "stripe_node-0110",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds 'upi' to payment method type enums used in listing and creating payment methods."
+  },
+  {
+    "entry_id": "stripe_node-0111",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds quantity_decimal support to invoice line item params and response objects."
+  },
+  {
+    "entry_id": "stripe_node-0112",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds a new 'level' field to Issuing authorization test helper risk assessment; the \u26a0\ufe0f indicates some potential impact on existing test code."
+  },
+  {
+    "entry_id": "stripe_node-0113",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Removes risk_level from Issuing authorization test helper params, breaking any test code that passes this field."
+  },
+  {
+    "entry_id": "stripe_node-0114",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds lifecycle_controls to Issuing.Card and its create params, extending the card data model."
+  },
+  {
+    "entry_id": "stripe_node-0115",
+    "change_type": "breaking",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Changes card_reference_id from string to string | null, which may break code that treats this field as always non-null."
+  },
+  {
+    "entry_id": "stripe_node-0116",
+    "change_type": "breaking",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Changes card brand from enum to enum | null, potentially breaking non-null assumptions in consumer code."
+  },
+  {
+    "entry_id": "stripe_node-0117",
+    "change_type": "breaking",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Changes card exp_month from longInteger to longInteger | null, potentially breaking non-null assumptions."
+  },
+  {
+    "entry_id": "stripe_node-0118",
+    "change_type": "breaking",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Changes card exp_year from longInteger to longInteger | null, potentially breaking non-null assumptions."
+  },
+  {
+    "entry_id": "stripe_node-0119",
+    "change_type": "breaking",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Changes card funding from enum to enum | null, potentially breaking non-null assumptions in consumer code."
+  },
+  {
+    "entry_id": "stripe_node-0120",
+    "change_type": "breaking",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Changes card last4 from string to string | null, potentially breaking non-null assumptions in consumer code."
+  },
+  {
+    "entry_id": "stripe_node-0121",
+    "change_type": "breaking",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Changes card moto from boolean to boolean | null, potentially breaking strict boolean checks in consumer code."
+  },
+  {
+    "entry_id": "stripe_node-0122",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds 3D Secure detail fields to card payment method details on payment records, extending the data model."
+  },
+  {
+    "entry_id": "stripe_node-0123",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds UPI redirect/QR next action support to PaymentIntent and SetupIntent."
+  },
+  {
+    "entry_id": "stripe_node-0124",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds 'upi' to PaymentLink payment method type enums for both response and request params."
+  },
+  {
+    "entry_id": "stripe_node-0125",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds recommended_action and signals fields to Radar.PaymentEvaluation, extending the fraud evaluation data model."
+  },
+  {
+    "entry_id": "stripe_node-0126",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Removes the insights field from Radar.PaymentEvaluation, breaking any code that reads this field."
+  },
+  {
+    "entry_id": "stripe_node-0127",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds 'crypto_fingerprint' as a new Radar value list item_type, expanding what can be added to value lists."
+  },
+  {
+    "entry_id": "stripe_node-0128",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds 'canceled_by_retention_policy' as a new cancellation reason enum value for Subscription."
+  },
+  {
+    "entry_id": "stripe_node-0129",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds a new API version value to WebhookEndpointCreateParams.api_version enum."
+  },
+  {
+    "entry_id": "stripe_node-0130",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Changes events_from type from a specific enum to string, which widens the type but breaks strict enum-based type checks in consumer code."
+  },
+  {
+    "entry_id": "stripe_node-0131",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds a new specific error code to StripeError and related error fields, providing more granular error handling."
+  },
+  {
+    "entry_id": "stripe_node-0132",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds the Stripe-Request-Trigger header to SDK requests, improving request attribution without changing any public API."
+  },
+  {
+    "entry_id": "stripe_node-0133",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds agent information to the UserAgent header, improving SDK telemetry without any breaking changes."
+  },
+  {
+    "entry_id": "stripe_node-0134",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Generic generated code update entry with no specific details; treated as a routine enhancement."
+  },
+  {
+    "entry_id": "stripe_node-0135",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds three new Reserve resource types (Hold, Plan, Release) to the SDK, expanding the available API resources."
+  },
+  {
+    "entry_id": "stripe_node-0136",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds location and reader fields to card_present and interac_present payment method details across multiple objects."
+  },
+  {
+    "entry_id": "stripe_node-0137",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds 'lk_vat' to tax ID type enums in response objects across multiple resources."
+  },
+  {
+    "entry_id": "stripe_node-0138",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds 'lk_vat' to tax ID type enums in request params for customer and invoice tax ID creation."
+  },
+  {
+    "entry_id": "stripe_node-0139",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds new reserve-related event types to the Event.type enum."
+  },
+  {
+    "entry_id": "stripe_node-0140",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds new terminal wifi certificate/key file purpose enum values to File and FileListParams."
+  },
+  {
+    "entry_id": "stripe_node-0141",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds new terminal wifi certificate/key file purpose enum values to FileCreateParams."
+  },
+  {
+    "entry_id": "stripe_node-0142",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds 'pay_by_bank' to payment method type enums for Invoice and Subscription."
+  },
+  {
+    "entry_id": "stripe_node-0143",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds display_name and service_user_number to BACS debit mandate payment method details."
+  },
+  {
+    "entry_id": "stripe_node-0144",
+    "change_type": "breaking",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Changes boleto tax_id from string to string | null, potentially breaking non-null assumptions in consumer code."
+  },
+  {
+    "entry_id": "stripe_node-0145",
+    "change_type": "breaking",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Changes us_bank_account expected_debit_date from string | null to string, narrowing the type and potentially breaking null-handling code."
+  },
+  {
+    "entry_id": "stripe_node-0146",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds transaction_purpose to US bank account payment method options across PaymentIntent params and response."
+  },
+  {
+    "entry_id": "stripe_node-0147",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds optional_items support to PaymentLinkUpdateParams, expanding update capabilities."
+  },
+  {
+    "entry_id": "stripe_node-0148",
+    "change_type": "breaking",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Removes card_issuer_decline from Radar.PaymentEvaluation.insights, breaking any code that accesses this field."
+  },
+  {
+    "entry_id": "stripe_node-0149",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds payment_behavior parameter to SubscriptionItemDeleteParams, giving more control over deletion behavior."
+  },
+  {
+    "entry_id": "stripe_node-0150",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds Sri Lanka (lk) tax registration support to Tax.Registration resources and create params."
+  },
+  {
+    "entry_id": "stripe_node-0151",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds cellular and stripe_s710 configuration options to Terminal configuration resources."
+  },
+  {
+    "entry_id": "stripe_node-0152",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds new Stripe S710 terminal reader device type enum values to Terminal.Reader."
+  },
+  {
+    "entry_id": "stripe_node-0153",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds new reserve event types to webhook endpoint enabled_events enums."
+  },
+  {
+    "entry_id": "stripe_node-0154",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds a new API version value to WebhookEndpointCreateParams.api_version enum."
+  },
+  {
+    "entry_id": "stripe_node-0155",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds snapshot event support for ReserveHold created/updated events."
+  },
+  {
+    "entry_id": "stripe_node-0156",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds snapshot event support for ReservePlan lifecycle events."
+  },
+  {
+    "entry_id": "stripe_node-0157",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds snapshot event support for ReserveRelease created events."
+  },
+  {
+    "entry_id": "stripe_node-0158",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": false,
+    "rationale": "Adds new specific error codes to StripeError and related error fields for storer capability issues."
+  },
+  {
+    "entry_id": "stripe_node-0159",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes an UnhandledPromiseRejection crash on failed V2 List operations, a significant runtime stability bug fix."
+  },
+  {
+    "entry_id": "stripe_node-0160",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Describes the fix for the V2 List UnhandledPromiseRejection crash that could take down Node processes on API errors."
+  },
+  {
+    "entry_id": "openai_python-001",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds new fields (external_key_id, email, metadata) to existing project and user models, and updates related types. Additive changes that extend the data model without removing existing fields."
+  },
+  {
+    "entry_id": "openai_python-002",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": true,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds support for Admin API Keys on a per-endpoint basis, introducing new authentication capability without removing existing auth mechanisms."
+  },
+  {
+    "entry_id": "openai_python-003",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": true,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "General admin API updates likely expanding administrative functionality; context suggests auth-related changes given the admin API key theme of this release."
+  },
+  {
+    "entry_id": "openai_python-004",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Generic manual API updates with no specific breaking or functional detail provided; treated as a routine enhancement patch."
+  },
+  {
+    "entry_id": "openai_python-005",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Generic manual API updates with no specific breaking or functional detail provided; treated as a routine enhancement patch."
+  },
+  {
+    "entry_id": "openai_python-006",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds the ability to configure HTTP headers via environment variables, expanding configuration flexibility without breaking existing behavior."
+  },
+  {
+    "entry_id": "openai_python-007",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": true,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Enables explicit passing of Azure authentication headers, extending auth configuration options for Azure users."
+  },
+  {
+    "entry_id": "openai_python-008",
+    "change_type": "bugfix",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Corrects an enum value from 'in-memory' to 'in_memory' for prompt_cache_retention; code relying on the old string value will break, making this a medium-risk bugfix."
+  },
+  {
+    "entry_id": "openai_python-009",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": true,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes the type preservation of the Python API key attribute, correcting an internal type handling issue with low breakage risk."
+  },
+  {
+    "entry_id": "openai_python-010",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": true,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Resolves Python auth type check issues, fixing incorrect type validations in the authentication flow."
+  },
+  {
+    "entry_id": "openai_python-011",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": true,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds support for admin API key authentication, extending the auth mechanisms available to SDK users."
+  },
+  {
+    "entry_id": "openai_python-012",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": true,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Prevents incorrect bearer token fallback when admin auth is in use, fixing an auth routing bug."
+  },
+  {
+    "entry_id": "openai_python-013",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": true,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Ensures the correct auth credentials are preserved when selected, fixing a credential management bug."
+  },
+  {
+    "entry_id": "openai_python-014",
+    "change_type": "enhancement",
+    "breaking_risk": "medium",
+    "affects_auth": true,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Enforces bearer auth requirement for stream helpers, which may break existing usages that relied on non-bearer auth with streaming."
+  },
+  {
+    "entry_id": "openai_python-015",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Corrects the types of created_at and completed_at fields in the Response model to float, fixing a type inaccuracy."
+  },
+  {
+    "entry_id": "openai_python-016",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Corrects timestamp field types to int in the Response model, fixing type annotation inaccuracies."
+  },
+  {
+    "entry_id": "openai_python-017",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes the field name format for multipart file arrays to use the correct format, resolving a serialization bug."
+  },
+  {
+    "entry_id": "openai_python-018",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Performance optimization for file structure copying in multipart requests; purely internal and non-breaking."
+  },
+  {
+    "entry_id": "openai_python-019",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal tooling improvement for the bootstrap script; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-020",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal formatting change to pyproject.toml; no user-facing or functional impact."
+  },
+  {
+    "entry_id": "openai_python-021",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Test dependency version bump; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-022",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": true,
+    "affects_data_model": true,
+    "rationale": "Adds rate limit and vector store information to the files create response, extending the data model with billing-relevant rate limit data."
+  },
+  {
+    "entry_id": "openai_python-023",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Documentation update for files rate limit; no functional or model change."
+  },
+  {
+    "entry_id": "openai_python-024",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "General API update with no specific detail; treated as a minor additive enhancement."
+  },
+  {
+    "entry_id": "openai_python-025",
+    "change_type": "bugfix",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Corrects the prompt_cache_retention enum value from 'in-memory' to 'in_memory'; existing code using the old value will break."
+  },
+  {
+    "entry_id": "openai_python-026",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "CI pipeline change removing a release-doctor workflow; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-027",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds a detail field to the InputFileContent type, extending the data model with a new optional field."
+  },
+  {
+    "entry_id": "openai_python-028",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": true,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds a new OAuthErrorCode type to the SDK, extending the type system with OAuth-related error handling."
+  },
+  {
+    "entry_id": "openai_python-029",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds an event handler implementation for WebSocket connections, extending client capabilities for real-time communication."
+  },
+  {
+    "entry_id": "openai_python-030",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds the ability to enqueue messages to WebSockets before connection is established, improving usability of the WebSocket client."
+  },
+  {
+    "entry_id": "openai_python-031",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds automatic reconnection support for WebSocket connections, improving resilience of real-time communication."
+  },
+  {
+    "entry_id": "openai_python-032",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes a bug where file data could be sent as multiple parameters instead of one, correcting multipart request behavior."
+  },
+  {
+    "entry_id": "openai_python-033",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Improves code examples in documentation; no functional or API change."
+  },
+  {
+    "entry_id": "openai_python-034",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds a phase field to conversation message types, extending the data model with a new field."
+  },
+  {
+    "entry_id": "openai_python-035",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds web_search_call.results to the ResponseIncludable type, extending what can be included in responses."
+  },
+  {
+    "entry_id": "openai_python-036",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": true,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds support for short-lived authentication tokens, extending the auth mechanisms available to SDK users."
+  },
+  {
+    "entry_id": "openai_python-037",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds support for sending raw binary data over WebSocket connections, extending the WebSocket client capabilities."
+  },
+  {
+    "entry_id": "openai_python-038",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Implements indices array format for query and form serialization, improving internal request serialization capabilities."
+  },
+  {
+    "entry_id": "openai_python-039",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes a bug where hardcoded query params were overwritten when merged with user-supplied params."
+  },
+  {
+    "entry_id": "openai_python-040",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Removes web_search_call.results from the ResponseIncludable type, which is a breaking removal for any code referencing this type value."
+  },
+  {
+    "entry_id": "openai_python-041",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Test dependency version bump; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-042",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Test dependency version bump; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-043",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Documentation update for file parameter descriptions; no functional or model change."
+  },
+  {
+    "entry_id": "openai_python-044",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds a keys field to multiple computer action types, extending the data model for computer use interactions."
+  },
+  {
+    "entry_id": "openai_python-045",
+    "change_type": "enhancement",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Aligns SDK response types with expanded item schemas, which may change existing type signatures and require code updates."
+  },
+  {
+    "entry_id": "openai_python-046",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Sanitizes endpoint path parameters to prevent potential injection or malformed URL issues."
+  },
+  {
+    "entry_id": "openai_python-047",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Makes the type field required in ResponseInputMessageItem, which is a breaking change for code that creates this type without the field."
+  },
+  {
+    "entry_id": "openai_python-048",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "CI workflow optimization to skip linting on metadata-only changes; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-049",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal gitignore update; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-050",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Test dependency version bump; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-051",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Test dependency version bump; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-052",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Test dependency version bump; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-053",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Test dependency version bump; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-054",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal test tooling migration from prism to steady; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-055",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds new model slug constants for gpt-5.4 nano and mini variants, extending available model identifiers."
+  },
+  {
+    "entry_id": "openai_python-056",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds the /v1/videos endpoint to the batches create method, expanding the supported batch endpoints."
+  },
+  {
+    "entry_id": "openai_python-057",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds a defer_loading field to the ToolFunction type, extending the data model with a new optional field."
+  },
+  {
+    "entry_id": "openai_python-058",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds in and nin operators to the ComparisonFilter type, expanding filter capabilities in the data model."
+  },
+  {
+    "entry_id": "openai_python-059",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Bumps the minimum required version of typing-extensions, which may break installations using older versions of this dependency."
+  },
+  {
+    "entry_id": "openai_python-060",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes pydantic serialization behavior by not passing by_alias unless explicitly set, correcting unexpected serialization side effects."
+  },
+  {
+    "entry_id": "openai_python-061",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal CI branch configuration update; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-062",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds support for custom voices in the API, extending the audio generation capabilities and data model."
+  },
+  {
+    "entry_id": "openai_python-063",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "General API update with no specific detail provided; treated as a minor additive enhancement."
+  },
+  {
+    "entry_id": "openai_python-064",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Manual API updates with no specific detail provided; treated as a minor additive enhancement."
+  },
+  {
+    "entry_id": "openai_python-065",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Manual API updates with no specific detail provided; treated as a minor additive enhancement."
+  },
+  {
+    "entry_id": "openai_python-066",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds multiple new Sora API capabilities (character API, video extensions/edits, higher resolution exports), extending the data model significantly."
+  },
+  {
+    "entry_id": "openai_python-067",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Repairs a merged videos resource that was broken, restoring correct functionality."
+  },
+  {
+    "entry_id": "openai_python-068",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal codegen tooling update; no direct user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-069",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal codegen tooling update; no direct user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-070",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes WebSocket protocol selection to match the HTTP protocol used (ws vs wss), correcting a connection bug."
+  },
+  {
+    "entry_id": "openai_python-071",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Cosmetic fix to use proper capitalization for 'WebSockets' in code/docs; no functional change."
+  },
+  {
+    "entry_id": "openai_python-072",
+    "change_type": "breaking",
+    "breaking_risk": "high",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Moves the GA ComputerTool to a new class and relocates 'computer_use_preview' to ComputerUsePreview, which is a breaking rename/restructure for existing code using these types."
+  },
+  {
+    "entry_id": "openai_python-073",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds new models (gpt-5.4), a tool search tool, and a new computer tool, extending the available API capabilities."
+  },
+  {
+    "entry_id": "openai_python-074",
+    "change_type": "breaking",
+    "breaking_risk": "medium",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Removes prompt_cache_key parameter from responses and the phase field from message types, breaking any code that relies on these fields."
+  },
+  {
+    "entry_id": "openai_python-075",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Internal schema fixes correcting inaccuracies in API type definitions; low breakage risk."
+  },
+  {
+    "entry_id": "openai_python-076",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Manual API updates with no specific detail provided; treated as a minor additive enhancement."
+  },
+  {
+    "entry_id": "openai_python-077",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Re-adds the phase field that was previously removed, restoring the data model field."
+  },
+  {
+    "entry_id": "openai_python-078",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal codegen tooling update; no direct user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-079",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal codegen tooling update; no direct user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-080",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal change to reduce Python runtime warnings; no user-facing functional impact."
+  },
+  {
+    "entry_id": "openai_python-081",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds a phase field to the API, extending the data model for conversation/message tracking."
+  },
+  {
+    "entry_id": "openai_python-082",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Fixes an incorrect phase enum value, correcting the data model for phase-related fields."
+  },
+  {
+    "entry_id": "openai_python-083",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Documentation update for the phase field; no functional or model change."
+  },
+  {
+    "entry_id": "openai_python-084",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal test improvement for proxy environment variable handling; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-085",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal refactor of SSE event parsing; no user-facing functional impact expected."
+  },
+  {
+    "entry_id": "openai_python-086",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds new model slug options (gpt-realtime-1.5, gpt-audio-1.5) to realtime API calls, expanding available model choices."
+  },
+  {
+    "entry_id": "openai_python-087",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal test improvement for proxy environment variable handling; no user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-088",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds WebSocket support for the Responses API, extending real-time communication capabilities."
+  },
+  {
+    "entry_id": "openai_python-089",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal enhancement to add request options to SSE classes; no direct user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-090",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Documentation update for mock server usage; no functional change."
+  },
+  {
+    "entry_id": "openai_python-091",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Documentation update adding batch size limit information to file_batches parameter descriptions; no functional change."
+  },
+  {
+    "entry_id": "openai_python-092",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Documentation enhancement for method descriptions across multiple API areas; no functional change."
+  },
+  {
+    "entry_id": "openai_python-093",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Documentation update for safety_identifier parameter; no functional change."
+  },
+  {
+    "entry_id": "openai_python-094",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds container network_policy and skills to the API, extending the data model with new fields and capabilities."
+  },
+  {
+    "entry_id": "openai_python-095",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Resolves a memory leak in structured outputs parse methods, fixing a resource management bug."
+  },
+  {
+    "entry_id": "openai_python-096",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Preserves webhook method visibility for compatibility checks, fixing a potential breaking issue in webhook handling."
+  },
+  {
+    "entry_id": "openai_python-097",
+    "change_type": "bugfix",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Fixes an internal lint error for Python 3.14 compatibility; no user-facing functional impact."
+  },
+  {
+    "entry_id": "openai_python-098",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Documentation restructuring by splitting api.md into separate resource files; no functional change."
+  },
+  {
+    "entry_id": "openai_python-099",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Minor comment update in code; no functional change."
+  },
+  {
+    "entry_id": "openai_python-100",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds image support to the Batch API, extending the data model to include image-type batch requests."
+  },
+  {
+    "entry_id": "openai_python-101",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds skills and hosted shell capabilities to the API, significantly extending the data model and available tools."
+  },
+  {
+    "entry_id": "openai_python-102",
+    "change_type": "enhancement",
+    "breaking_risk": "none",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Internal dependency version bump; no direct user-facing impact."
+  },
+  {
+    "entry_id": "openai_python-103",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds context_management field to the Responses API, extending the data model with new context management capabilities."
+  },
+  {
+    "entry_id": "openai_python-104",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Further additions to responses context_management, extending the data model with context management support."
+  },
+  {
+    "entry_id": "openai_python-105",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds a status field to shell_call_output, extending the data model for shell call responses."
+  },
+  {
+    "entry_id": "openai_python-106",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Adds image generation actions to the Responses API and a name field to ResponseFunctionCallArgumentsDoneEvent, extending the data model."
+  },
+  {
+    "entry_id": "openai_python-107",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Adds a custom JSON encoder to the client for extended type support, improving serialization capabilities."
+  },
+  {
+    "entry_id": "openai_python-108",
+    "change_type": "bugfix",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "Reverts a change to the web search Find action, restoring previous behavior."
+  },
+  {
+    "entry_id": "openai_python-109",
+    "change_type": "enhancement",
+    "breaking_risk": "low",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": true,
+    "rationale": "Updates the type definition for the find_in_page action, correcting or extending the data model for web search actions."
+  },
+  {
+    "entry_id": "twilio-001",
+    "change_type": "breaking",
+    "breaking_risk": "high",
+    "affects_auth": false,
+    "affects_billing": false,
+    "affects_data_model": false,
+    "rationale": "The sunset of Transit CallerID forces customers to migrate to alternative solutions (Verified CallerID or Immutable Call Forwarding), which is a breaking change for any integration relying on presenting a different caller ID than the originating number. Failure to migrate before the deadline will result in loss of functionality."
+  }
+]
