@@ -27,7 +27,7 @@ def _classify_source(source_id: str, entries: list[dict]) -> list[dict]:
     input_artifact = f"parsed_changelogs/{source_id}.json"
     entry_ids = [e["entry_id"] for e in entries]
 
-    prompt = _build_prompt(source_id, _trim_entries(entries))
+    prompt = _build_prompt(source_id, entries)
     response = call_llm(
         stage="stage_1_classification",
         source_id=source_id,
@@ -42,21 +42,6 @@ def _classify_source(source_id: str, entries: list[dict]) -> list[dict]:
         return []
 
     return _parse_json_array(response)
-
-
-_BODY_LIMIT = 500
-
-
-def _trim_entries(entries: list[dict]) -> list[dict]:
-    """Keep all fields but cap change_body to avoid prompt bloat."""
-    out = []
-    for e in entries:
-        copy = dict(e)
-        body = copy.get("change_body") or ""
-        if len(body) > _BODY_LIMIT:
-            copy["change_body"] = body[:_BODY_LIMIT] + "…"
-        out.append(copy)
-    return out
 
 
 def _build_prompt(source_id: str, entries: list[dict]) -> str:
