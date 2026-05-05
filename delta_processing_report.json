@@ -1,0 +1,50 @@
+{
+  "snapshot_taken_at": "2026-05-05T08:56:40Z",
+  "baseline_source": "parsed_changelogs\\stripe_node.json",
+  "baseline_entry_count": 160,
+  "delta_entry_count": 2,
+  "delta_entries": [
+    {
+      "entry_id": "stripe_node-DELTA-001",
+      "source_id": "stripe_node",
+      "source": "Stripe Node.js SDK",
+      "version_or_date": "v17.0.0-delta-sim",
+      "published_at": "2026-05-05",
+      "change_title": "Deprecate payment_method_types on PaymentIntent",
+      "change_body": "The payment_method_types parameter on PaymentIntent.create() is deprecated. Pass payment_method_configuration instead. Existing integrations will continue to work until the next major release, but new features will only be available via payment_method_configuration.",
+      "change_type_raw": "deprecated"
+    },
+    {
+      "entry_id": "stripe_node-DELTA-002",
+      "source_id": "stripe_node",
+      "source": "Stripe Node.js SDK",
+      "version_or_date": "v17.0.0-delta-sim",
+      "published_at": "2026-05-05",
+      "change_title": "Breaking: capture_method 'automatic' renamed to 'automatic_async'",
+      "change_body": "The capture_method value 'automatic' on PaymentIntent has been renamed to 'automatic_async' to better reflect its behaviour. Passing 'automatic' will raise an invalid_request_error starting in API version 2026-01-01. Update all PaymentIntent.create() calls that set capture_method='automatic'.",
+      "change_type_raw": "breaking"
+    }
+  ],
+  "delta_classifications": [
+    {
+      "entry_id": "stripe_node-DELTA-001",
+      "change_type": "deprecation",
+      "breaking_risk": "low",
+      "affects_auth": false,
+      "affects_billing": true,
+      "affects_data_model": false,
+      "rationale": "The payment_method_types parameter is being deprecated in favor of payment_method_configuration, but existing integrations continue to work until the next major release. Risk is low since no immediate breakage occurs."
+    },
+    {
+      "entry_id": "stripe_node-DELTA-002",
+      "change_type": "breaking",
+      "breaking_risk": "high",
+      "affects_auth": false,
+      "affects_billing": true,
+      "affects_data_model": true,
+      "rationale": "Renaming capture_method 'automatic' to 'automatic_async' is a breaking change that will cause invalid_request_error for any integration passing the old value starting with API version 2026-01-01. All affected PaymentIntent.create() calls must be updated."
+    }
+  ],
+  "verification": "Only delta entries were classified.",
+  "verification_ok": true
+}
